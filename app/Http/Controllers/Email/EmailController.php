@@ -39,24 +39,33 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
-       $message =  request()->validate([
+    //    $message =  request()->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email',
+    //         'phone' => 'required',
+    //         'message' => 'required'
+    //     ]);
+
+    //     mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($message));
+        
+
+    //    return 'mensaje recibido';
+ 
+    }
+
+    public function sendContactEmail(Request $request){
+        $message =  request()->validate([
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'message' => 'required'
         ]);
 
-      
-        
-
-
         mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($message));
         
 
        return 'mensaje recibido';
-     //  return new MessageReceived($message);
-        // return $request;
-      //  return response()->json(['data' => $request], 200);
+
     }
 
     /**

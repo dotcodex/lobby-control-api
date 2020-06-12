@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resource('emails', 'Email\EmailController', ['except' => ['destroy']]);
+//Route::resource('contact', 'Email\EmailController', ['except' => ['destroy']]);
+Route::post('contact', 'Email\EmailController@sendContactEmail');
