@@ -61,7 +61,7 @@ class EmailController extends Controller
             'message' => 'required'
         ]);
 
-        mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($message));
+        Mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($message));
         
 
        return 'mensaje recibido';
