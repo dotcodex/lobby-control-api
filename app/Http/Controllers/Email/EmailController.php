@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mail\MessageReceived;
 use Illuminate\Support\Facades\Mail;
+use Validator;
 
 
 class EmailController extends Controller
@@ -54,18 +55,24 @@ class EmailController extends Controller
     }
 
     public function sendContactEmail(Request $request){
-        $message =  request()->validate([
+
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'message' => 'required'
         ]);
 
-        Mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($message));
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 400);
+        }
         
-
-       return 'mensaje recibido';
-
+        Mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($request->all()));
+        
+        return response()->json([
+            "success"=> true,
+            "message" => "Email enviado exitosamente!"
+        ]);
     }
 
     /**
