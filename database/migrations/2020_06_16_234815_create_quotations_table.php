@@ -15,10 +15,14 @@ class CreateQuotationsTable extends Migration
     {
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone',15);
+            $table->integer('user_type');
+            $table->integer('edificie_quantity');
+            $table->string('edifice_name');
+            $table->bigInteger('commune_id');
+            $table->string('fullname');
             $table->string('email');
-            $table->integer('score');
+            $table->string('phone');
+
             $table->timestamps();
         });
     }

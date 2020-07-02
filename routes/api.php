@@ -20,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 //Route::resource('contact', 'Email\EmailController', ['except' => ['destroy']]);
 Route::post('contact', 'Email\EmailController@sendContactEmail');
+Route::get('regions', 'Region\RegionController@getRegions');
+Route::get('regions/{id}', 'Region\RegionController@getRegionsId');
+Route::get('provinces', 'Province\ProvinceController@getprovinces');
+Route::get('provinces/{id}', 'Province\ProvinceController@getprovincesId');
+Route::get('communes', 'Commune\CommuneController@getcommunes');
+Route::get('communes/{id}', 'Commune\CommuneController@getcommunesId');
