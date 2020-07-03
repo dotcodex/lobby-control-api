@@ -3,16 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Customer;
 
 class Quotation extends Model
 {
+    public function customer() {
+        return $this->belongsTo(Customer::class);      
+    }
     
     protected $fillable =[
         'id',
-        'name',
-        'phone',
+        'user_type',
+        'edificie_quantity',
+        'edifice_name',
         'email',
-        'score'
+        'phone',
+        'commune_id',
+        'customer_id',
     ];
     
 }

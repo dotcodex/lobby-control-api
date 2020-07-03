@@ -16,6 +16,11 @@ class CreateDiagnosticsTable extends Migration
         Schema::create('diagnostics', function (Blueprint $table) {
             $table->id();
             $table->integer('score');
+            $table->bigInteger('commune_id')->unsigned();
+            $table->bigInteger('customer_id')->unsigned();
+            
+            $table->foreign('commune_id')->references('id')->on('communes');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
         });
     }
