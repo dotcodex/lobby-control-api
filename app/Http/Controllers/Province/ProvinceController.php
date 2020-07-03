@@ -9,7 +9,7 @@ use App\Province;
 
 class ProvinceController extends Controller
 {
-    public function getprovinces(){
+    public function getProvinces(){
     
         $provinces = Province::all();
         return response()->json(['data'=> $provinces],200);

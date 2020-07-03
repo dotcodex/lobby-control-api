@@ -8,7 +8,7 @@ use App\Commune;
 
 class CommuneController extends Controller
 {
-    public function getcommunes(){
+    public function getCommunes(){
         $communes = Commune::all();
         return response()->json(['data'=> $communes],200);
     }
