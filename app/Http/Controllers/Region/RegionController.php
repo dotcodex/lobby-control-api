@@ -20,12 +20,12 @@ class RegionController extends Controller
 
     public function getRegions(){
         $regions = Region::all();
-        return response()->json(['data'=> $regions],200);
+        return response()->json( $regions,200);
     }
      
     public function getRegionsId($id){
         $regions = Region::find($id);
-        return response()->json(['data'=> $regions],201);
+        return response()->json( $regions,201);
 
 
     }

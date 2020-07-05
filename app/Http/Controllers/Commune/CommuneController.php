@@ -11,12 +11,12 @@ class CommuneController extends Controller
 {
     public function getCommunes(){
         $communes = Commune::all();
-        return response()->json([ $communes],200);
+        return response()->json( $communes,200);
     }
     public function getCommunesId($id){
         $communes = Commune::all()->where('province_id', $id);
        // dd($region);
-        return response()->json([ $communes],201);
+        return response()->json( $communes,201);
 
 
     }

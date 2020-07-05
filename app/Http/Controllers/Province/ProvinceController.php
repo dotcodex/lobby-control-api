@@ -13,11 +13,11 @@ class ProvinceController extends Controller
     public function getProvinces(){
     
         $provinces = Province::all();
-        return response()->json([ $provinces],200);
+        return response()->json( $provinces,200);
     }
     public function getProvincesId($id){
         $provinces = Province::all()->where('region_id',$id);
-        return response()->json([ $provinces],201);
+        return response()->json( $provinces,201);
 
 
     }
