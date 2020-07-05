@@ -23,6 +23,6 @@ Route::post('contact', 'Email\EmailController@sendContactEmail');
 Route::get('regions', 'Region\RegionController@getRegions');
 Route::get('regions/{id}', 'Region\RegionController@getRegionsId');
 Route::get('provinces', 'Province\ProvinceController@getProvinces');
-Route::get('provinces/{id}', 'Province\ProvinceController@getProvincesId');
+Route::get('provinces/{id}', 'Province\ProvinceController@getProvincesByRegion');
 Route::get('communes', 'Commune\CommuneController@getCommunes');
-Route::get('communes/{id}', 'Commune\CommuneController@getCommunesId');
+Route::get('communes/{id}', 'Commune\CommuneController@getCommunesByProvince');

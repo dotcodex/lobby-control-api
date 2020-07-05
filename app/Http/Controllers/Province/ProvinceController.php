@@ -15,11 +15,8 @@ class ProvinceController extends Controller
         $provinces = Province::all();
         return response()->json( $provinces,200);
     }
-    public function getProvincesId($id){
-        $provinces = Province::all()->where('region_id',$id);
-       // dd($provinces->flatten());
-        return response()->json( $provinces->flatten([]),201);
-
-
+    public function getProvincesByRegion($id){
+        $provinces = Province::where('region_id',$id)->get();
+        return response()->json( $provinces,201);
     }
 }
