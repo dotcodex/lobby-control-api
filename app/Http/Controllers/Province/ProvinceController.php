@@ -10,11 +10,6 @@ use App\Region;
 
 class ProvinceController extends Controller
 {
-    public function getProvinces(){
-    
-        $provinces = Province::all();
-        return response()->json( $provinces,200);
-    }
     public function getProvincesByRegion($id){
         $provinces = Province::where('region_id',$id)->get();
         return response()->json( $provinces,201);
