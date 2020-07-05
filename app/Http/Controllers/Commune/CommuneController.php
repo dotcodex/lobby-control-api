@@ -16,7 +16,7 @@ class CommuneController extends Controller
     public function getCommunesId($id){
         $communes = Commune::all()->where('province_id', $id);
        // dd($region);
-        return response()->json( $communes,201);
+        return response()->json( $communes->flatten([]),201);
 
 
     }
