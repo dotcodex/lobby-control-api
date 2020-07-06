@@ -23,3 +23,4 @@ Route::post('contact', 'Email\EmailController@sendContactEmail');
 Route::get('regions', 'Region\RegionController@getRegions');
 Route::get('provinces/{region_id}', 'Province\ProvinceController@getProvincesByRegion');
 Route::get('communes/{province_id}', 'Commune\CommuneController@getCommunesByProvince');
+Route::get('settings/', 'Setting\SettingController@getSetting');

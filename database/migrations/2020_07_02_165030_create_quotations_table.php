@@ -17,10 +17,7 @@ class CreateQuotationsTable extends Migration
             $table->id();
             $table->integer('user_type');
             $table->integer('edificie_quantity');
-            $table->string('edifice_name');
-            $table->string('fullname');
-            $table->string('email');
-            $table->string('phone');
+            $table->string('edifice_name');    
             $table->bigInteger('commune_id')->unsigned();
             $table->bigInteger('customer_id')->unsigned();
             
