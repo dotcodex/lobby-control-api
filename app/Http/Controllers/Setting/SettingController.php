@@ -9,7 +9,8 @@ class SettingController extends Controller
 {
     public function getSetting(){
     $datos =    env('SERVICE_PRICE');
+    $datoNumerico = intval($datos);
 
-    return response()->json(['SERVICE_PRICE' => $datos]);
+    return response()->json(['servicePrice' => $datoNumerico]);
     }
 }
