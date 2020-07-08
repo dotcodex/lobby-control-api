@@ -25,4 +25,5 @@ Route::get('provinces/{region_id}', 'ProvinceController@getProvincesByRegion');
 Route::get('communes/{province_id}', 'CommuneController@getCommunesByProvince');
 Route::get('settings/', 'SettingController@getSetting');
 Route::post('diagnostics', 'DiagnosticController@saveDiagnostic');
+Route::post('quotations', 'QuotationController@saveQuotation');
 
