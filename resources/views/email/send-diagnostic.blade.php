@@ -13,7 +13,7 @@
 </p> --}}
 
 <p>
-<strong> {{ $msg }} </strong>
+<strong> tu nivel de riesgo es :  {{ $msg }} </strong>
 </p>
 
 
