@@ -15,7 +15,7 @@ class CreateDiagnosticsTable extends Migration
     {
         Schema::create('diagnostics', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_type');
+            $table->string('user_type');
             $table->integer('edificie_quantity');
             $table->string('edifice_name');    
             $table->bigInteger('commune_id')->unsigned();

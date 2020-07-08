@@ -17,9 +17,9 @@ class Customer extends Model
         return $this->hasOne(Diagnostic::class);
     }
     protected $fillable = [
-        'name',
+        'fullname',
         'email',
-        'password',
+        'phone',
       
     ];
 }

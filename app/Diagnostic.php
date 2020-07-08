@@ -13,8 +13,11 @@ class Diagnostic extends Model
 
     protected $fillable =[
         'id',
-        'score',
+        'user_type',
+        'edificie_quantity',
+        'edifice_name',
         'commune_id',
         'customer_id',
+        'score',
     ];
 }
