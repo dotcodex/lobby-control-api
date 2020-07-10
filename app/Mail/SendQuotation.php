@@ -31,6 +31,7 @@ class SendQuotation extends Mailable
      */
     public function build()
     {
+        
         return $this->view('email.send-quotation');
     }
 }

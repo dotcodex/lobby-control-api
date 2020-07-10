@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Diagnostic;
+namespace App\Http\Controllers;
 
 use App\Diagnostic;
 use App\Customer;

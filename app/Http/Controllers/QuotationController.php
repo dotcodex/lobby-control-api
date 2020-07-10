@@ -13,16 +13,17 @@ class QuotationController extends Controller
    
     public function saveQuotation(Request $request)
     {
-       
+        
         $customer = $this->createCustomer($request);
         $quotation = $this->creteQuotations($request, $customer);
         $edificie_quantity = $quotation->edificie_quantity;
         $price = $this->getPrice($edificie_quantity);
-
-       
-
+        
+        
+        
         Mail::to($customer->email)->queue(new SendQuotation($price));
-      
+   
+
         return response()->json([
             "success"=> true,
             "message" => "Email enviado!"
@@ -78,6 +79,7 @@ class QuotationController extends Controller
 
     private function getPrice($edificie_quantity){
         $servicePrice = env('SERVICE_PRICE'); 
+        
         $limit = env('TOWER_LIMIT');
         $price;
         $priceTotal;
@@ -87,7 +89,7 @@ class QuotationController extends Controller
         else if($edificie_quantity < $limit){
             $price = $servicePrice / $edificie_quantity;
         }
-
+        
         $priceTotal =  (intval($price) * $edificie_quantity);
         return $priceTotal;
     }
