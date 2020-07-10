@@ -13,12 +13,15 @@ class QuotationController extends Controller
    
     public function saveQuotation(Request $request)
     {
+       
         $customer = $this->createCustomer($request);
-        $this->creteQuotations($request, $customer);
+        $quotation = $this->creteQuotations($request, $customer);
+        $edificie_quantity = $quotation->edificie_quantity;
+        $price = $this->getPrice($edificie_quantity);
 
-        $letter = 'holaaa';
+       
 
-        Mail::to($customer->email)->queue(new SendQuotation($letter));
+        Mail::to($customer->email)->queue(new SendQuotation($price));
       
         return response()->json([
             "success"=> true,
@@ -49,7 +52,7 @@ class QuotationController extends Controller
     private function creteQuotations($request , $customer){
         $rules=[
             'user_type' => 'required',
-            'edificie_quantity' => 'required|email',
+            'edificie_quantity' => 'required',
             'edifice_name' => 'required',
             'commune_id' => 'required',
             'customer_id' => 'required'
@@ -68,7 +71,25 @@ class QuotationController extends Controller
          ];
      
          $createQuotation = Quotation::create($quotation);
+
+         return $createQuotation;
         
+    }
+
+    private function getPrice($edificie_quantity){
+        $servicePrice = env('SERVICE_PRICE'); 
+        $limit = env('TOWER_LIMIT');
+        $price;
+        $priceTotal;
+        if($edificie_quantity >= $limit){
+            $price = env('MIN_PRICE') ;          
+        }
+        else if($edificie_quantity < $limit){
+            $price = $servicePrice / $edificie_quantity;
+        }
+
+        $priceTotal =  (intval($price) * $edificie_quantity);
+        return $priceTotal;
     }
 
    

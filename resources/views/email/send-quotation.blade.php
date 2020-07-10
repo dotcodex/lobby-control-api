@@ -13,7 +13,8 @@
 </p> --}}
 
 <p>
-<strong> mensaje de prueba quotation  {{ $msg }} </strong>
+<strong> el valor de nuestro servicio para tu comunidad es de :</strong>
+<strong> ${{ $msg }} pesos + IVA por departamento </strong>
 </p>
 
 
