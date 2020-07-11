@@ -21,6 +21,7 @@ class QuotationController extends Controller
         
         
         
+        
         Mail::to($customer->email)->queue(new SendQuotation($price));
    
 
@@ -79,7 +80,7 @@ class QuotationController extends Controller
 
     private function getPrice($edificie_quantity){
         $servicePrice = env('SERVICE_PRICE'); 
-        
+       
         $limit = env('TOWER_LIMIT');
         $price;
         $priceTotal;
@@ -91,6 +92,7 @@ class QuotationController extends Controller
         }
         
         $priceTotal =  (intval($price) * $edificie_quantity);
+        
         return $priceTotal;
     }
 
