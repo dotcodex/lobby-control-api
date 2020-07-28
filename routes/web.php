@@ -15,10 +15,10 @@ use File as F;
 */
 
 Route::get('/', function() {
-    return F::get(public_path() . '/frontend/index.html');
+    return F::get(public_path() . '/index.html');
 });
-Route::get('/', function() {
-    return F::get(public_path() . '/frontend/diagnostico.html');
+Route::get('/diagnostico', function() {
+    return F::get(public_path() . '/diagnostico.html');
 });
 Route::get('hola', function(){
     return view('email/send-diagnostic');
