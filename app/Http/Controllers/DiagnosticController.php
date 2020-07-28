@@ -27,7 +27,7 @@ class DiagnosticController extends Controller
         }
        
        
-        Mail::to($customer->email)->queue(new SendDiagnostic($letter));
+        Mail::to($customer->email)->queue(new SendDiagnostic($letter, $customer));
       
         return response()->json([
             "success"=> true,
@@ -59,7 +59,7 @@ class DiagnosticController extends Controller
     private function creteDiagnostic($request , $customer){
         $rules=[
             'user_type' => 'required',
-            'edificie_quantity' => 'required|email',
+            'edificie_quantity' => 'required',
             'edifice_name' => 'required',
             'commune_id' => 'required',
             'customer_id' => 'required',

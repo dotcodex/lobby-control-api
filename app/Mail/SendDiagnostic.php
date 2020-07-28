@@ -18,9 +18,12 @@ class SendDiagnostic extends Mailable
      */
     public $subject = 'mensage recibidoo de dignostic';
     public $msg;
-    public function __construct($msg)
+    public $customer;
+    public function __construct($msg,$customer)
     {
         $this->msg = $msg;
+        $this->customer = $customer;
+        
     }
 
     /**
