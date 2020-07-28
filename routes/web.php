@@ -15,7 +15,7 @@ use File as F;
 */
 
 Route::get('/', function() {
-    return F::get(public_path() . '/index.html');
+    return F::get(public_path() . '/home.html');
 });
 Route::get('/diagnostico', function() {
     return F::get(public_path() . '/diagnostico.html');
