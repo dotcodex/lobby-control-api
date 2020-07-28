@@ -1,4 +1,5 @@
 <?php
+use File as F;
 
 // use Illuminate\Support\Facades\Route;
 
@@ -13,8 +14,11 @@
 |
 */
 
-Route::get('/', function () {
- //  return view('welcome');
+Route::get('/', function() {
+    return F::get(public_path() . '/frontend/index.html');
+});
+Route::get('/', function() {
+    return F::get(public_path() . '/frontend/diagnostico.html');
 });
 Route::get('hola', function(){
     return view('email/send-diagnostic');
