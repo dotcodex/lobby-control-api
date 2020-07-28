@@ -13,7 +13,6 @@ yarn-error.log
 
 #nextjs frontend
 public/_next
-public/fonts
 public/images
 public/videos
 public/index.html
