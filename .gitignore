@@ -10,3 +10,11 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+#nextjs frontend
+public/_next
+public/images
+public/videos
+public/index.html
+public/diagnostico.html
+public/404.html
