@@ -33,6 +33,7 @@ class EmailController extends Controller
         }
         
         Mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($request->all()));
+     //   Mail::to('contacto@lobbycontrol.cl')->queue(new MessageReceived($request->all()));
         
         return response()->json([
             "success"=> true,

@@ -7,7 +7,7 @@
     <title>mensaje recibido</title>
     <style>
         .root {
-        background: rgb(189, 138, 236);
+        background: rgb(120,41,220);
         box-shadow: 0 4px 4px 0 rgba(5, 5, 5, 0.3);
         transition: 0.3s;
         width: 700px;
@@ -15,6 +15,9 @@
         margin: 2% 25%;
         height: 65vh;
         color: white;
+        }
+        .logo {
+            width: 50px;
         }
         .head-title {
            
@@ -60,7 +63,9 @@
 <strong> tu nivel de riesgo es :  {{ $msg }} </strong>
 </p> --}}
 <div class="root">
-    <img src="{{URL::asset('http://127.0.0.1:8000/images/logo-lobbycontrol.png')}}" alt="Image"/>
+    <div class="logo">
+        <img src="{{URL::asset('/img/LogoLobby.png')}}" alt="Image"/>
+    </div>
     <hr>
     <div class="head-title">
         <h1>Gracias por Cotizar con Nosotros
