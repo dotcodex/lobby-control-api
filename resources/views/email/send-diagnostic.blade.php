@@ -1,3 +1,9 @@
+@php 
+$score = isset($msg) ? $msg : "C"; 
+$name = isset($customer) ? $customer : "juan rivera"; 
+@endphp
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -216,21 +222,21 @@
         </div>
 
         <div class="mensaje">
-            {{-- <p>Hola {{ $customer }} ,</p> --}}
-            <p>Holaaa CARLOS</p>
+            <p>Hola {{ $name }} ,</p>
+         
            
         </div>
 
         <div class="imageDiagnostic">
-            {{-- @if ($msg == "A")
+            @if ($score == "A")
                 <img src="https://lobbycontrol.cl/img/ALobbyControl-01.png" alt="Image" />
-            @elseif ($msg == "B")
+            @elseif ($score == "B")
                 <img src="https://lobbycontrol.cl/img/BLobbyControl-01.png" alt="Image" />
             @else
                 <img src="https://lobbycontrol.cl/img/CLobbyControl-01.png" alt="Image" />
-            @endif --}}
+            @endif
 
-            <img src="https://lobbycontrol.cl/img/ALobbyControl-01.png" alt="Image" />
+           
             
         </div>
         <div class="mensaje">
@@ -267,10 +273,10 @@
         </div>
 
         <div class="contact-images" >
-            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
-            <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
-            <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
-            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
+            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="https://lobbycontrol.cl/img/facebook.svg" alt="Image" ></a>    
+            <a href="https://twitter.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/twitter.svg" alt="Image" ></a>    
+            <a href="https://www.linkedin.com/company/lobby-control/"><img src="https://lobbycontrol.cl/img/linkedin.svg" alt="Image" ></a>    
+            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/instagram.svg" alt="Image" ></a>    
         </div>
 
         <hr>
