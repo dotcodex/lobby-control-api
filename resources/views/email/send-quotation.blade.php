@@ -44,7 +44,28 @@ $name = isset($customer) ? $customer : "carlos parra";
             margin: 10px auto;
             width: 600px;
         }
-
+        .value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-style: italic;
+        }
+        .value:last-child {
+            margin-bottom: 50px;
+        }
+        .value span {
+            font-style: normal;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 25px;
+            font-size: 34px;
+            color: rgb(120, 41, 220);
+        }
         .mensaje {
 
             font-size: larger;
@@ -56,6 +77,10 @@ $name = isset($customer) ? $customer : "carlos parra";
 
         }
 
+        .mensaje h5 {
+            font-size: 18px;
+        }
+
         .link {
             text-align: center;
             font-size: medium;
@@ -65,7 +90,10 @@ $name = isset($customer) ? $customer : "carlos parra";
             font-family: Raleway, sans-serif;
 
         }
-      
+        .link .desc{
+            font-size: 12px;
+            opacity: 0.9;
+        }
 
         .link a:link {
            text-decoration: none ;
@@ -173,14 +201,13 @@ $name = isset($customer) ? $customer : "carlos parra";
             }
 
             .link {
-            text-align: center;
-            font-size: larger;
-            font-weight: bold;
-            margin: auto;
-            margin-bottom: 5%;
-            width: auto;
-            font-family: Raleway, sans-serif;
-
+                text-align: center;
+                font-size: larger;
+                font-weight: bold;
+                margin: auto;
+                margin-bottom: 5%;
+                width: auto;
+                font-family: Raleway, sans-serif;
             }
 
             .contacto {
@@ -232,14 +259,12 @@ $name = isset($customer) ? $customer : "carlos parra";
                 El valor de nuestro servicio para tu comunidad es de:
             </h5>
 
-            <h6>
-           
-                ${{ $valor }} Pesos + IVA mensual por departamento.
+            <h6 class="value">
+                <span>${{ $valor }}</span> Pesos + IVA mensual por departamento.
             </h6>
 
-            <h6>
-               
-                ${{ $valor }} Pesos + IVA mensual por comunidad.
+            <h6 class="value">
+                <span>${{ $valor }}</span> Pesos + IVA mensual por comunidad.
             </h6>
         
         </div>
@@ -250,7 +275,7 @@ $name = isset($customer) ? $customer : "carlos parra";
         <div class="link">
             <p> Escríbenos a contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo. </a> </p>
             <br/>
-            <p> Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.</p>
+            <p class="desc"> Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales.</p>
         </div>
 
         <div class="contact-images" >
