@@ -23,7 +23,7 @@ class SendDiagnostic extends Mailable
     public function __construct($msg,$customer)
     {
         $this->msg = $msg;
-        $this->customer = $customer->fullname;
+        $this->customer = strtoupper($customer->fullname);
        
       
         

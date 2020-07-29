@@ -29,7 +29,7 @@
 
         .logo img {
             width: 200px;
-            margin: 10px 0 0 10px;
+            padding: 15px;
             
         }
 
@@ -38,8 +38,6 @@
             font-family: Raleway, sans-serif;
             margin: 10px auto;
             width: 600px;
-
-
         }
 
         .mensaje {
@@ -60,6 +58,19 @@
             width: 600px;
             font-family: Raleway, sans-serif;
 
+        }
+      
+
+        .link a:link {
+           text-decoration: none ;
+           color: white;
+           
+        }
+        .link a:visited {color: white;  font-family: Raleway; text-decoration: none }
+        .link a {
+            text-decoration: none ;
+           color: white;
+         
         }
 
         .link p {
@@ -92,10 +103,97 @@
             margin: 0;
         }
 
+        .contact-images {
+            margin: 10px auto;
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3%;
+            margin-top: 3%;
+        }
+
+        .contact-images a {
+            margin: 0 5px 0 5px;
+
+        }
+
+        .contact-images img {
+            width: 40px; 
+            height : 40px;
+        }
+
         hr {
             background-color: white;
             height: 4px;
             border: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .root {
+                width: auto;
+                margin: 2% 0;
+            }
+
+            .logo img {
+                width: 200px;           
+                display: block;
+                margin: auto; 
+                padding-top: 10px;
+                   
+                
+            }
+
+
+            .head-title {
+                text-align: center;
+                font-family: Raleway, sans-serif;
+                width: auto;
+                margin: 10px 7%;
+            }
+
+            .mensaje {
+
+                font-size: larger;
+                text-align:  center;
+                font-family: Raleway, sans-serif;
+                width: auto;
+                margin: 10px 7%;
+
+            }
+
+            .imageDiagnostic {
+                margin: 10px auto;
+                width: auto;
+            }
+
+            .link {
+            text-align: center;
+            font-size: larger;
+            font-weight: bold;
+            margin: auto;
+            margin-bottom: 5%;
+            width: auto;
+            font-family: Raleway, sans-serif;
+
+            }
+
+            .contacto {
+            text-align: center;
+
+            margin: 10px auto;
+            width: auto;
+            margin-bottom: 3%;
+
+            }
+
+            .contact-images {
+            margin: 10px auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3%;
+            margin-top: 3%;
+        }
         }
 
     </style>
@@ -103,11 +201,14 @@
 <body>
 
     <div class="root">
+
         <div class="logo">
           
             <img src="https://lobbycontrol.cl/img/LogoLobby.png" alt="logo" />
         </div>
+
         <hr>
+
         <div class="head-title">
             <h1>Te Detallamos La Clasificacion de Riesgo de
                 Tu Comunidad</h1>
@@ -116,10 +217,8 @@
 
         <div class="mensaje">
             {{-- <p>Hola {{ $customer }} ,</p> --}}
-            <p>holaaa</p>
+            <p>Holaaa CARLOS</p>
            
-            <p>Muchas Gracias por cotizar con nosotros, es un verdadero agrado saber
-                que las comunidades diligentes se preocupan por la seguridad de sus habitantes.</p>
         </div>
 
         <div class="imageDiagnostic">
@@ -130,14 +229,52 @@
             @else
                 <img src="https://lobbycontrol.cl/img/CLobbyControl-01.png" alt="Image" />
             @endif --}}
+
             <img src="https://lobbycontrol.cl/img/ALobbyControl-01.png" alt="Image" />
+            
+        </div>
+        <div class="mensaje">
+            <p> 
+                Escríbenos a: 
+            </p>
+            <p>
+                contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo.
+                Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
+            </p>
+           
+            {{-- @if ($msg == "A")
+                <p> 
+                    Escríbenos a contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo.
+                    Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
+                </p>
+            @elseif ($msg == "B")
+                <p>
+                    Escríbenos a contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo.
+                    Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
+                </p>
+            @else
+                <p>
+                    ¡Evita multas y un proceso Civil o Penal por no cumplimiento de las responsabilidades que estipula la Ley! 
+                    Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
+                </p>
+            @endif --}}
+           
         </div>
 
         <div class="link">
-            <p> Visitanos en www.lobbycontrol.cl</p>
+            <p> Visitanos en <a href="https://lobbycontrol.cl/">www.lobbycontrol.cl </a> </p>
             <p> ¡o en nuestras redes sociales!</p>
         </div>
+
+        <div class="contact-images" >
+            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
+            <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
+            <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
+            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
+        </div>
+
         <hr>
+
         <div class="contacto">
             <p>Equipo LobbyControl</p>
             <p>Chile</p>
