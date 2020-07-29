@@ -20,6 +20,6 @@ Route::get('/', function() {
 Route::get('/diagnostico', function() {
     return F::get(public_path() . '/diagnostico.html');
 });
-Route::get('hola', function(){
+Route::get('/hola', function(){
     return view('email/send-diagnostic');
 });
