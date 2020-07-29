@@ -29,7 +29,6 @@ $name = isset($customer) ? $customer : "carlos parra";
             color: white;
             padding-bottom: 10px;
             display: block;
-            justify-content: center;
         }
        
 
@@ -46,26 +45,21 @@ $name = isset($customer) ? $customer : "carlos parra";
             width: 600px;
         }
         .value {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin: 0;
-            margin-bottom: 15px;
-            font-size: 12px;
-            font-style: italic;
-        }
-        .value:last-child {
-            margin-bottom: 50px;
-        }
-        .value span {
             font-style: normal;
             padding: 15px;
-            margin-bottom: 10px;
             background: white;
             border-radius: 25px;
             font-size: 34px;
             color: rgb(120, 41, 220);
+        }
+        h6 {
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+            font-style: italic;
+        }
+        h6:last-child {
+            margin-bottom: 50px;
         }
         .mensaje {
 
@@ -141,8 +135,6 @@ $name = isset($customer) ? $customer : "carlos parra";
         .contact-images {
             margin: 10px auto;
             width: 600px;
-            display: flex;
-            justify-content: center;
             margin-bottom: 3%;
             margin-top: 3%;
         }
@@ -212,19 +204,15 @@ $name = isset($customer) ? $customer : "carlos parra";
             }
 
             .contacto {
-            text-align: center;
-
-            margin: 10px auto;
-            width: auto;
-            margin-bottom: 3%;
-
+                text-align: center;
+                margin: 0 auto;
+                width: auto;
+                margin-bottom: 3%;
             }
 
             .contact-images {
             margin: 10px auto;
             width: auto;
-            display: flex;
-            justify-content: center;
             margin-bottom: 3%;
             margin-top: 3%;
         }
@@ -260,12 +248,14 @@ $name = isset($customer) ? $customer : "carlos parra";
                 El valor de nuestro servicio para tu comunidad es de:
             </h5>
 
-            <h6 class="value">
-                <span>${{ $price }}</span> Pesos + IVA mensual por departamento.
+            <span class="value"n>${{ $price }}</span>
+            <h6>
+                Pesos + IVA mensual por departamento.
             </h6>
 
-            <h6 class="value">
-                <span>${{ $total }}</span> Pesos + IVA mensual por comunidad.
+            <span class="value"n>${{ $total }}</span>
+            <h6>
+                Pesos + IVA mensual por comunidad.
             </h6>
         
         </div>
@@ -280,10 +270,12 @@ $name = isset($customer) ? $customer : "carlos parra";
         </div>
 
         <div class="contact-images" >
-            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
-            <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
-            <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
-            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
+            <center>
+                <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
+                <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
+                <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
+                <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
+            </center>
         </div>
 
         <hr>
@@ -295,8 +287,6 @@ $name = isset($customer) ? $customer : "carlos parra";
             <p>Zona Centro +569 42979702</p>
             <p>Zona Sur +569 38730046</p>
         </div>
-
-
     </div>
 
 
