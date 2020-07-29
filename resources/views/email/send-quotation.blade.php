@@ -242,7 +242,7 @@ $name = isset($customer) ? $customer : "carlos parra";
         </div>
 
         <div class="mensaje">
-            <p>Hola {{ $name }} ,</p>
+            <h4>Hola, {{ $name }}  </h4>
             
             <h5>
                 El valor de nuestro servicio para tu comunidad es de:
@@ -271,10 +271,10 @@ $name = isset($customer) ? $customer : "carlos parra";
 
         <div class="contact-images" >
             <center>
-                <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
-                <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
-                <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
-                <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
+                <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="https://lobbycontrol.cl/img/facebook.svg" alt="Image" ></a>    
+                <a href="https://twitter.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/twitter.svg" alt="Image" ></a>    
+                <a href="https://www.linkedin.com/company/lobby-control/"><img src="https://lobbycontrol.cl/img/linkedin.svg" alt="Image" ></a>    
+                <a href="https://www.instagram.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/instagram.svg" alt="Image" ></a>    
             </center>
         </div>
 

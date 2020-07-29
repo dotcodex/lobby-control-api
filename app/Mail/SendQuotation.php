@@ -19,10 +19,12 @@ class SendQuotation extends Mailable
 
     public $subject = 'mensage recibidoo de dignostic';
     public $prices;
+    public $customer;
 
-    public function __construct($prices)
+    public function __construct($prices, $customer)
     {
         $this->prices = $prices;
+        $this->customer = strtoupper($customer->fullname);
     }
 
     /**

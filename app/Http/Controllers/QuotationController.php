@@ -22,7 +22,7 @@ class QuotationController extends Controller
         
         
         
-        Mail::to($customer->email)->queue(new SendQuotation($prices));
+        Mail::to($customer->email)->queue(new SendQuotation($prices,$customer ));
    
 
         return response()->json([
