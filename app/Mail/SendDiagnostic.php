@@ -16,13 +16,17 @@ class SendDiagnostic extends Mailable
      *
      * @return void
      */
+    
     public $subject = 'mensage recibidoo de dignostic';
     public $msg;
     public $customer;
     public function __construct($msg,$customer)
     {
         $this->msg = $msg;
-        $this->customer = $customer;
+        $this->customer = strtoupper($customer->fullname);
+       
+      
+        
         
     }
 
@@ -33,6 +37,9 @@ class SendDiagnostic extends Mailable
      */
     public function build()
     {
+        
+
         return $this->view('email.send-diagnostic');
+       
     }
 }
