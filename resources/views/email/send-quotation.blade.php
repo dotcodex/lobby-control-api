@@ -1,5 +1,6 @@
 @php 
-$valor = isset($msg) ? $msg : 50000; 
+$price = isset($prices) ? $prices['price'] : 1000; 
+$total = isset($prices) ? $prices['total'] : 80000; 
 $name = isset($customer) ? $customer : "carlos parra"; 
 
 
@@ -260,11 +261,11 @@ $name = isset($customer) ? $customer : "carlos parra";
             </h5>
 
             <h6 class="value">
-                <span>${{ $valor }}</span> Pesos + IVA mensual por departamento.
+                <span>${{ $price }}</span> Pesos + IVA mensual por departamento.
             </h6>
 
             <h6 class="value">
-                <span>${{ $valor }}</span> Pesos + IVA mensual por comunidad.
+                <span>${{ $total }}</span> Pesos + IVA mensual por comunidad.
             </h6>
         
         </div>

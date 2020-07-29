@@ -17,12 +17,12 @@ class QuotationController extends Controller
         $customer = $this->createCustomer($request);
         $quotation = $this->creteQuotations($request, $customer);
         $edificie_quantity = $quotation->edificie_quantity;
-        $price = $this->getPrice($edificie_quantity);
+        $prices = $this->getPrice($edificie_quantity);
         
         
         
         
-        Mail::to($customer->email)->queue(new SendQuotation($price));
+        Mail::to($customer->email)->queue(new SendQuotation($prices));
    
 
         return response()->json([
@@ -93,7 +93,11 @@ class QuotationController extends Controller
         
         $priceTotal =  (intval($price) * $edificie_quantity);
         
-        return $priceTotal;
+        return [
+            "price" => $price,
+            "total" => $priceTotal
+        ];
+    
     }
 
    
