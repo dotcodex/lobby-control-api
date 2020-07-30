@@ -32,7 +32,7 @@ class EmailController extends Controller
             return response()->json($validator->messages(), 400);
         }
         
-        Mail::to('carlos.20499@gmail.com')->queue(new MessageReceived($request->all()));
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new MessageReceived($request->all()));
      //   Mail::to('contacto@lobbycontrol.cl')->queue(new MessageReceived($request->all()));
         
         return response()->json([
