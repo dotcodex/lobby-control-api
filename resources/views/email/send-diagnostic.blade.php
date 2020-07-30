@@ -112,8 +112,7 @@ $name = isset($customer) ? $customer : "juan rivera";
         .contact-images {
             margin: 10px auto;
             width: 600px;
-            display: flex;
-            justify-content: center;
+   
             margin-bottom: 3%;
             margin-top: 3%;
         }
@@ -195,8 +194,7 @@ $name = isset($customer) ? $customer : "juan rivera";
             .contact-images {
             margin: 10px auto;
             width: auto;
-            display: flex;
-            justify-content: center;
+            
             margin-bottom: 3%;
             margin-top: 3%;
         }
@@ -229,11 +227,11 @@ $name = isset($customer) ? $customer : "juan rivera";
 
         <div class="imageDiagnostic">
             @if ($score == "A")
-                <img src="https://lobbycontrol.cl/img/ALobbyControl-01.png" alt="Image" />
+                <img src="https://lobbycontrol.cl/img/RiesgoBajo-01.png" alt="Image" />
             @elseif ($score == "B")
-                <img src="https://lobbycontrol.cl/img/BLobbyControl-01.png" alt="Image" />
+                <img src="https://lobbycontrol.cl/img/RiesgoMedio-01.png" alt="Image" />
             @else
-                <img src="https://lobbycontrol.cl/img/CLobbyControl-01.png" alt="Image" />
+                <img src="https://lobbycontrol.cl/img/RiesgoAlto-01.png" alt="Image" />
             @endif
 
            
@@ -273,10 +271,13 @@ $name = isset($customer) ? $customer : "juan rivera";
         </div>
 
         <div class="contact-images" >
-            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="https://lobbycontrol.cl/img/facebook.svg" alt="Image" ></a>    
-            <a href="https://twitter.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/twitter.svg" alt="Image" ></a>    
-            <a href="https://www.linkedin.com/company/lobby-control/"><img src="https://lobbycontrol.cl/img/linkedin.svg" alt="Image" ></a>    
-            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/instagram.svg" alt="Image" ></a>    
+            <center>
+                <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="https://lobbycontrol.cl/img/facebook.svg" alt="Image" ></a>    
+                <a href="https://twitter.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/twitter.svg" alt="Image" ></a>    
+                <a href="https://www.linkedin.com/company/lobby-control/"><img src="https://lobbycontrol.cl/img/linkedin.svg" alt="Image" ></a>    
+                <a href="https://www.instagram.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/instagram.svg" alt="Image" ></a>    
+            </center>
+      
         </div>
 
         <hr>

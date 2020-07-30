@@ -48,45 +48,13 @@
 
         }
 
-        .link {
-            text-align: center;
-            font-size: larger;
-            font-weight: bold;
+        .table-contact {
             margin: 10px auto;
             width: 600px;
-            font-family: Raleway, sans-serif;
-
         }
-      
+        .table-contact table
 
-        .link a:link {
-           text-decoration: none ;
-           color: white;
-           
-        }
-        .link a:visited {color: white;  font-family: Raleway; text-decoration: none }
-        .link a {
-            text-decoration: none ;
-           color: white;
-         
-        }
-
-        .link p {
-            margin: 0px;
-        }
-
-        .imageDiagnostic {
-            margin: 10px auto;
-            width: 600px;
-
-
-        }
-
-        .imageDiagnostic img {
-            width: 200px;
-            display: block;
-            margin: auto;
-        }
+   
 
         .contacto {
             text-align: center;
@@ -231,17 +199,41 @@
         
         </div> 
 
-        <div class="link">
-            <p> Visitanos en <a href="https://lobbycontrol.cl/">www.lobbycontrol.cl </a> </p>
-            <p> ¡o en nuestras redes sociales!</p>
+        <div class="table-contact">
+            <table style="width:70%">
+                <tr>
+                  <th>Nombre</th>
+                  <td>Jackson</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>Smith</td>
+             
+                </tr>
+                <tr>
+                    <th>Telefono</th>
+                    <td>Jackson</td>
+                 
+                </tr>
+                <tr>
+                    <th>Mensaje</th>
+                    <td>Jackson</td>
+                 
+                </tr>
+              </table>
         </div>
 
-        <div class="contact-images" >
-            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="/img/facebook.svg" alt="Image" ></a>    
-            <a href="https://twitter.com/lobbycontrolcl/"><img src="/img/twitter.svg" alt="Image" ></a>    
-            <a href="https://www.linkedin.com/company/lobby-control/"><img src="/img/linkedin.svg" alt="Image" ></a>    
-            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="/img/instagram.svg" alt="Image" ></a>    
-        </div>
+        {{-- <div class="link">
+            <p> Visitanos en <a href="https://lobbycontrol.cl/">www.lobbycontrol.cl </a> </p>
+            <p> ¡o en nuestras redes sociales!</p>
+        </div> --}}
+
+        {{-- <div class="contact-images" >
+            <a href="https://www.facebook.com/lobbycontrol.cl/"><img src="https://lobbycontrol.cl/img/facebook.svg" alt="Image" ></a>    
+            <a href="https://twitter.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/twitter.svg" alt="Image" ></a>    
+            <a href="https://www.linkedin.com/company/lobby-control/"><img src="https://lobbycontrol.cl/img/linkedin.svg" alt="Image" ></a>    
+            <a href="https://www.instagram.com/lobbycontrolcl/"><img src="https://lobbycontrol.cl/img/instagram.svg" alt="Image" ></a>    
+        </div> --}}
 
         <hr>
 
