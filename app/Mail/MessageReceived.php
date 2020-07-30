@@ -11,7 +11,7 @@ class MessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = '' ;
+    public $subject = 'Nuevo mensaje desde formulario de contacto' ;
     public $msg;
 
 
@@ -36,7 +36,7 @@ class MessageReceived extends Mailable
     {
       //  return $this->view('email.message-received');
        
-        $subject = $this->msg['name'];
+        $subject = $this->subject;
         $email = $this->msg['email'];
         $name = $this->msg['name'];
       
