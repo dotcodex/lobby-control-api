@@ -17,7 +17,7 @@ class SendDiagnostic extends Mailable
      * @return void
      */
     
-    public $subject = 'mensage recibidoo de dignostic';
+    public $subject = 'Tu Nivel de Riesgo';
     public $msg;
     public $customer;
     public function __construct($msg,$customer)

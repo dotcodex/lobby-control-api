@@ -17,7 +17,7 @@ class SendQuotation extends Mailable
      * @return void
      */
 
-    public $subject = 'mensage recibidoo de dignostic';
+    public $subject = 'Gracias por Cotizar con Nosotros';
     public $prices;
     public $customer;
 
