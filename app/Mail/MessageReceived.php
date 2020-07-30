@@ -37,8 +37,8 @@ class MessageReceived extends Mailable
       //  return $this->view('email.message-received');
        
         $subject = $this->subject;
-        $email = $this->msg['email'];
-        $name = $this->msg['name'];
+        $email = "contacto@lobbycontrol.cl";
+        $name = "LobbyControl";
       
         return $this
         ->from($email , $name)
