@@ -1,3 +1,13 @@
+@php 
+$name = strtoupper(isset($msg) ? $msg['name'] : 'carlos'); 
+$email = isset($msg) ? $msg['email'] : 'carlos.2055@hotmail.com'; 
+$phone = isset($msg) ? $msg['phone'] : "65644455"; 
+$message = isset($msg) ? $msg['message'] : "Los leones son los únicos felinos que viven en manada. Las unidades familiares pueden incluir hasta tres machos, una docena de hembras y sus crías. Todas las leonas de una manada están emparentadas y usualmente los pequeñas hembras en su seno se quedan con el grupo a medida que envejecen. Los varones jóvenes sin embargo tarde o temprano abandonan el grupo o son expulsados y establecen su propia manada."; 
+
+
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +51,7 @@
         .mensaje {
 
             font-size: larger;
-            text-align: justify;
+            text-align: center;
             font-family: Raleway, sans-serif;
             margin: 10px auto;
             width: 600px;
@@ -51,43 +61,40 @@
         .table-contact {
             margin: 10px auto;
             width: 600px;
+            
         }
-        .table-contact table
+        .table-contact table{
+            margin: 0 auto;
+            text-align: left;    
+            border-collapse:separate; 
+            border-spacing: 1em 1em;
+        }
 
-   
+      
 
-        .contacto {
-            text-align: center;
+    
 
+        .table-contact h4{
+            margin: 20px 20%;
+            text-align: left;    
+
+        }
+        .texto-div {
             margin: 10px auto;
             width: 600px;
-            margin-bottom: 3%;
-
+            
         }
 
-        .contacto p {
-            margin: 0;
-        }
-
-        .contact-images {
+        .texto{
+            width: 70%;
+            padding: 10px;
             margin: 10px auto;
-            width: 600px;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3%;
-            margin-top: 3%;
+            
         }
 
-        .contact-images a {
-            margin: 0 5px 0 5px;
+    
 
-        }
-
-        .contact-images img {
-            width: 40px; 
-            height : 40px;
-        }
-
+        
         hr {
             background-color: white;
             height: 4px;
@@ -127,19 +134,32 @@
 
             }
 
-            .imageDiagnostic {
+            .table-contact {
                 margin: 10px auto;
                 width: auto;
+            
+            }
+
+            .table-contact h4{
+                margin: 20px 9%;
+                text-align: left;    
+
+            }
+
+            .texto-div {
+                margin: 10px auto;
+                width: auto;
+            
             }
 
             .link {
-            text-align: center;
-            font-size: larger;
-            font-weight: bold;
-            margin: auto;
-            margin-bottom: 5%;
-            width: auto;
-            font-family: Raleway, sans-serif;
+                text-align: center;
+                font-size: larger;
+                font-weight: bold;
+                margin: auto;
+                margin-bottom: 5%;
+                width: auto;
+                font-family: Raleway, sans-serif;
 
             }
 
@@ -194,33 +214,34 @@
 
         <div class="mensaje">
             <p>
-                Un posible cliente los esta contactando: 
+                El Cliente {{$name}} se ha puesto en contacto con ustedes
             </p>
         
         </div> 
 
         <div class="table-contact">
-            <table style="width:70%">
+            <table>
+               {{-- <h4>Datos :</h4> --}}
                 <tr>
-                  <th>Nombre</th>
-                  <td>Jackson</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>Smith</td>
+                    <th>Email:</th>
+                    <td> {{ $email }} </td>
              
                 </tr>
                 <tr>
-                    <th>Telefono</th>
-                    <td>Jackson</td>
+                    <th>Telefono:</th>
+                    <td> {{ $phone }} </td>
                  
                 </tr>
                 <tr>
-                    <th>Mensaje</th>
-                    <td>Jackson</td>
-                 
+                    <th>Mensaje:</th>
                 </tr>
+                
               </table>
+              
+        </div>
+
+        <div class="texto-div">
+            <p class="texto" > {{ $message }} </p>
         </div>
 
         {{-- <div class="link">
@@ -237,14 +258,7 @@
 
         <hr>
 
-        <div class="contacto">
-            <p>Equipo LobbyControl</p>
-            <p>Chile</p>
-            <p>¡Hablemos!</p>
-            <p>Zona Centro +569 42979702</p>
-            <p>Zona Sur +569 38730046</p>
-        </div>
-
+  
 
     </div>
 

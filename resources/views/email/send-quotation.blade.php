@@ -1,5 +1,5 @@
 @php 
-$price = isset($prices) ? $prices['price'] : 1000; 
+$price =  round(isset($prices) ? $prices['price'] : 1000); 
 $total = isset($prices) ? $prices['total'] : 80000; 
 $name = isset($customer) ? $customer : "carlos parra"; 
 
