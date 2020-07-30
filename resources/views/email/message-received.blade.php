@@ -70,6 +70,14 @@ $message = isset($msg) ? $msg['message'] : "Los leones son los únicos felinos q
             border-spacing: 1em 1em;
         }
 
+       
+        .link a:visited {color: white;  font-family: Raleway; text-decoration: none }
+        .link a {
+            text-decoration: none ;
+           color: white;
+         
+        }
+
       
 
     
@@ -224,7 +232,7 @@ $message = isset($msg) ? $msg['message'] : "Los leones son los únicos felinos q
                {{-- <h4>Datos :</h4> --}}
                 <tr>
                     <th>Email:</th>
-                    <td> {{ $email }} </td>
+                    <td class="link"> {{ $email }} </td>
              
                 </tr>
                 <tr>
