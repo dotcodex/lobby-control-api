@@ -241,12 +241,9 @@ $name = isset($customer) ? $customer : "juan rivera";
             <p> 
                 Escríbenos a: 
             </p>
-            <p>
-                contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo.
-                Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
-            </p>
+            
            
-            {{-- @if ($msg == "A")
+            @if ($msg == "A")
                 <p> 
                     Escríbenos a contacto@lobbycontrol.cl y te apoyaremos con nuestro sistema Único en el Mundo.
                     Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
@@ -261,7 +258,7 @@ $name = isset($customer) ? $customer : "juan rivera";
                     ¡Evita multas y un proceso Civil o Penal por no cumplimiento de las responsabilidades que estipula la Ley! 
                     Entérate de Tips y Consejos de Seguridad a través de nuestras redes sociales @lobbycontrolcl.
                 </p>
-            @endif --}}
+            @endif
            
         </div>
 
