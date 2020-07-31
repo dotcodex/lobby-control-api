@@ -82,25 +82,25 @@ class DiagnosticController extends Controller
     }
 
     private function processRiskLevel($request){
-
-        $points = $request->score;
-        $pointsTotal = 60;
-        $level = ($pointsTotal - $points )/10;
-      
-
-        if($level == 0){
+        // 0 No  La clasificación de riesgo de tu comunidad es A
+        // 1 No  La clasificación de riesgo de tu comunidad es B
+        // 2 No  La clasificación de riesgo de tu comunidad es B
+        // 3 No  La clasificación de riesgo de tu comunidad es C
+        // 4 No  La clasificación de riesgo de tu comunidad es C
+        // 5 No  La clasificación de riesgo de tu comunidad es C
+        // 6 No  La clasificación de riesgo de tu comunidad es C
+        $scoreTotal = $request->score;
+        $level = $scoreTotal / 10;
+        if ($level == 0) {
             return 'A';
         }
-        else if($level > 0 && $level < 3){
+        if ($level > 0 && $level < 3) {
             return 'B';
         }
-        else if($level >= 3 && $level <= 6){
+        if ($level >= 3 && $level <= 6) {
             return 'C';
         }
-        else {
-            return null;
-        }
+        return null;
     }
-
 
 }
