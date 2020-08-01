@@ -238,9 +238,7 @@ $name = isset($customer) ? $customer : "juan rivera";
             
         </div>
         <div class="mensaje">
-            <p> 
-                Escríbenos a: 
-            </p>
+            
             
            
             @if ($msg == "A")
