@@ -7,6 +7,7 @@ use App\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mail\SendDiagnostic;
+use App\Mail\DiagnosticAdmin;
 use Illuminate\Support\Facades\Mail;
 
 class DiagnosticController extends Controller
@@ -15,7 +16,7 @@ class DiagnosticController extends Controller
 
     public function saveDiagnostic(Request $request)
     {
-        
+
         $customer = $this->createCustomer($request);
         $this->creteDiagnostic($request, $customer);
         $letter = $this->processRiskLevel($request);
@@ -25,17 +26,18 @@ class DiagnosticController extends Controller
                 "message" => "mensaje invalido"
             ], 409);
         }
-       
-       
+
+
         Mail::to($customer->email)->queue(new SendDiagnostic($letter, $customer));
-      
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new DiagnosticAdmin($letter, $customer));
+
         return response()->json([
             "success"=> true,
             "message" => "Email enviado!"
         ]);
 
     }
-    
+
     private function createCustomer($request)
     {
         $rules=[
@@ -44,10 +46,10 @@ class DiagnosticController extends Controller
             'phone' => 'required'
         ];
         $this->validate($request, $rules);
-        
+
         $customer = Customer::updateOrCreate(
             ['email' => $request->get('email')],
-            [  
+            [
                 'fullname'=> $request->get('fullname'),
                 'phone' =>  $request->get('phone')
             ]
@@ -76,9 +78,9 @@ class DiagnosticController extends Controller
              'customer_id' => $customer->id,
              'score' => $request->score,
          ];
-     
+
          $createDiagnostics = Diagnostic::create($diagnostic);
-        
+
     }
 
     private function processRiskLevel($request){

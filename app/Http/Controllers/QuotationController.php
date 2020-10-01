@@ -6,24 +6,26 @@ use App\Quotation;
 use App\Customer;
 use Illuminate\Http\Request;
 use App\Mail\SendQuotation;
+use App\Mail\QuotationAdmin;
 use Illuminate\Support\Facades\Mail;
 
 class QuotationController extends Controller
 {
-   
+
     public function saveQuotation(Request $request)
     {
-        
+
         $customer = $this->createCustomer($request);
         $quotation = $this->creteQuotations($request, $customer);
         $edificie_quantity = $quotation->edificie_quantity;
         $prices = $this->getPrice($edificie_quantity);
-        
-        
-        
-        
+
+        // dd($customer);
+
+
         Mail::to($customer->email)->queue(new SendQuotation($prices,$customer ));
-   
+        Mail::to(env('MAIL_FROM_ADDRESS'))->queue(new QuotationAdmin($prices,$customer ));
+
 
         return response()->json([
             "success"=> true,
@@ -39,10 +41,10 @@ class QuotationController extends Controller
             'phone' => 'required'
         ];
         $this->validate($request, $rules);
-        
+
         $customer = Customer::updateOrCreate(
             ['email' => $request->get('email')],
-            [  
+            [
                 'fullname'=> $request->get('fullname'),
                 'phone' =>  $request->get('phone')
             ]
@@ -58,7 +60,7 @@ class QuotationController extends Controller
             'edifice_name' => 'required',
             'commune_id' => 'required',
             'customer_id' => 'required'
-            
+
         ];
 
        // $this->validate($request, $rules);
@@ -69,36 +71,36 @@ class QuotationController extends Controller
              'edifice_name' => $request->edifice_name,
              'commune_id'=> $request->commune_id,
              'customer_id' => $customer->id
-             
+
          ];
-     
+
          $createQuotation = Quotation::create($quotation);
 
          return $createQuotation;
-        
+
     }
 
     private function getPrice($edificie_quantity){
-        $servicePrice = env('SERVICE_PRICE'); 
-       
+        $servicePrice = env('SERVICE_PRICE');
+
         $limit = env('TOWER_LIMIT');
         $price;
         $priceTotal;
         if($edificie_quantity >= $limit){
-            $price = env('MIN_PRICE') ;          
+            $price = env('MIN_PRICE') ;
         }
         else if($edificie_quantity < $limit){
             $price = $servicePrice / $edificie_quantity;
         }
-        
+
         $priceTotal =  (intval($price) * $edificie_quantity);
-        
+
         return [
             "price" => $price,
             "total" => $priceTotal
         ];
-    
+
     }
 
-   
+
 }

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendQuotation extends Mailable
+class QuotationAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,14 +17,15 @@ class SendQuotation extends Mailable
      * @return void
      */
 
-    public $subject = 'Gracias por Cotizar con Nosotros';
-    public $prices;
+    public $subject = 'Has recibido una nueva cotizacion';
     public $customer;
+    public $mailCustomer;
 
     public function __construct($prices, $customer)
     {
-        $this->prices = $prices;
-        $this->customer = strtoupper($customer->fullname);
+        $this->customer = $customer;
+        // $this->customer = strtoupper($customer->fullname);
+        // $this->email = $customer->email;
     }
 
     /**
@@ -35,6 +36,6 @@ class SendQuotation extends Mailable
     public function build()
     {
 
-        return $this->view('email.send-quotation');
+        return $this->view('email.sendAdmin');
     }
 }
